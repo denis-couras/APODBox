@@ -285,6 +285,8 @@
 		E44FA78E2D4BA4E200A3E169 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APOD_KEY = WLqmRkTBuYZTGMZIBPvG11f3x2mbhtqXNNlvFcov;
+				APOD_URL = "https://api.nasa.gov/planetary/apod";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -313,6 +315,8 @@
 		E44FA78F2D4BA4E200A3E169 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APOD_KEY = WLqmRkTBuYZTGMZIBPvG11f3x2mbhtqXNNlvFcov;
+				APOD_URL = "https://api.nasa.gov/planetary/apod";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
