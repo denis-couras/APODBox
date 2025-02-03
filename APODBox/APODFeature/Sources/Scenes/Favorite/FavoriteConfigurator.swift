@@ -6,15 +6,27 @@
 //
 import UIKit
 
-protocol FavoriteAssembly {
-    func build(
-        route: FavoriteRoute?,
-        dependencies: APODFeature
-    ) -> UIViewController
-}
+final class FavoriteAssemble {
+    static func build(tabController: UITabBarController) -> UIViewController {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return UIViewController()
+        }
 
-final class FavoriteAssemble: FavoriteAssembly {
-    func build(route: FavoriteRoute?, dependencies: APODFeature) -> UIViewController {
-        return FavoriteViewController()
+        let coreDataManager: CoreDataManager<FavoriteMedia> = .init(context: delegate.persistentContainer.viewContext)
+        let repositoryDB = APODRepositoryDB<FavoriteMedia>(coreDataManager: coreDataManager)
+
+        let presenter = FavoritePresenter()
+        let interactor = FavoriteInteractor(
+            workers: .init(
+                coreDataWorker: CoreDataWorker<FavoriteMedia>(repository: repositoryDB)),
+            presenter: presenter
+        )
+        let view = FavoriteViewController(interactor: interactor)
+        let router = FavoriteRouter()
+        router.viewController = view
+        router.tabBarController = tabController
+        presenter.viewController = view
+        view.router = router
+        return view
     }
 }

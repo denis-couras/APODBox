@@ -6,11 +6,11 @@
 //
 
 protocol GetFavoriteWorkerProtocol {
-func execute() -> [APOD]
+    func execute() -> [APODResponseModel]
 }
 
 final class GetFavoriteWorker: GetFavoriteWorkerProtocol {
-    func execute() -> [APOD] {
+    func execute() -> [APODResponseModel] {
         []
     }
 }
