@@ -33,8 +33,10 @@ final class GalleryView: UIView {
             lblExplanation
         ])
         stack.axis = .vertical
+        stack.distribution = .fill
+        stack.alignment = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.spacing = 0
+        stack.spacing = 5
         return stack
     }()
 
@@ -43,7 +45,7 @@ final class GalleryView: UIView {
         container.addSubview(loadingView)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.isHidden = true
-        container.backgroundColor = .white
+        container.backgroundColor = .systemBackground
         return container
     }()
 

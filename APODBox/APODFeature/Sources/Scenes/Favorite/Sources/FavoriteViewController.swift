@@ -33,7 +33,7 @@ final class FavoriteViewController: UIViewController {
     override func loadView() {
         view = FavoriteView(delegate: self)
         customView = view as? FavoriteViewLogic
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
 
     override func viewDidLoad() {

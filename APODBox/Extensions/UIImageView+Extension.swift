@@ -7,6 +7,8 @@
 import UIKit
 
 public extension UIImageView {
+    private static let imageCache = NSCache<NSURL, UIImage>()
+
     func loadImage(
         from url: URL,
         contentMode: ContentMode = .scaleAspectFit,
@@ -14,6 +16,11 @@ public extension UIImageView {
         errorImage: UIImage? = nil
     ) {
         self.contentMode = contentMode
+        if let cachedImage = UIImageView.imageCache.object(forKey: url as NSURL) {
+            self.image = cachedImage.withRenderingMode(renderingMode)
+            return
+        }
+
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse,
@@ -26,6 +33,9 @@ public extension UIImageView {
                 }
                 return
             }
+
+            UIImageView.imageCache.setObject(image, forKey: url as NSURL)
+
             DispatchQueue.main.async { [weak self] in
                 self?.image = image.withRenderingMode(renderingMode)
             }

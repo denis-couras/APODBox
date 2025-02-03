@@ -36,7 +36,7 @@ final class FavoriteView: UIView {
         container.addSubview(loadingView)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.isHidden = true
-        container.backgroundColor = .white
+        container.backgroundColor = .systemBackground
         return container
     }()
 

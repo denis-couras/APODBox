@@ -20,12 +20,14 @@ extension GalleryView {
 
         NSLayoutConstraint.activate([
             lblTitle.leadingAnchor.constraint(equalTo: stack.leadingAnchor),
-            lblTitle.trailingAnchor.constraint(equalTo: stack.trailingAnchor)
+            lblTitle.trailingAnchor.constraint(equalTo: stack.trailingAnchor),
+            lblTitle.heightAnchor.constraint(equalToConstant: 21)
         ])
 
         NSLayoutConstraint.activate([
             lblDate.leadingAnchor.constraint(equalTo: stack.leadingAnchor),
-            lblDate.trailingAnchor.constraint(equalTo: stack.trailingAnchor)
+            lblDate.trailingAnchor.constraint(equalTo: stack.trailingAnchor),
+            lblDate.heightAnchor.constraint(equalToConstant: 15)
         ])
 
         NSLayoutConstraint.activate([

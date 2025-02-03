@@ -22,7 +22,7 @@ final class EmptyView: UIView {
         lbl.font = .systemFont(ofSize: 16, weight: .semibold)
         lbl.numberOfLines = 1
         lbl.textAlignment = .center
-        lbl.textColor = .gray
+        lbl.textColor = .systemGray
         return lbl
     }()
 

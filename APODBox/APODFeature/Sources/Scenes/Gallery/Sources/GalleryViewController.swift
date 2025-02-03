@@ -37,7 +37,7 @@ final class GalleryViewController: UIViewController {
     override func loadView() {
         view = GalleryView(delegate: self)
         customView = view as? GalleryViewLogic
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
 
     override func viewDidLoad() {

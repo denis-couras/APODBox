@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
 
         let galleryVC = GalleryAssemble.build(tabController: self)
         let favoriteVC = FavoriteAssemble.build(tabController: self)
